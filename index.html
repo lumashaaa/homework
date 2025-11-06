@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Olly</title>
+    <style>
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            outline: none;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f8f3ff;
+            font-family: Arial;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            background: #8a2be2;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .menu {
+            text-align: center;
+            margin: 20px 0;
+            background: #e6d7ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .menu a {
+            margin: 0 15px;
+            color: #6a0dad;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .banner {
+            margin: 20px 0;
+        }
+        .banner img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .service-item, .contact-item {
+            background: #f0e6ff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #6a0dad;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header" aria-hidden="true">
+            <h1>Olly</h1>
+        </div>
+
+        <div class="menu" aria-hidden="true">
+            <a href="#" onclick="showPage('main')" tabindex="-1" aria-hidden="true">Главнаа</a>
+            <a href="#" onclick="showPage('services')" tabindex="-1" aria-hidden="true">Услуги</a>
+            <a href="#" onclick="showPage('contacts')" tabindex="-1" aria-hidden="true">Контакты</a>
+        </div>
+
+        <div id="main" class="page" aria-hidden="true">
+            <div class="banner">
+                <img src="https://goodzel.ru/wp-content/uploads/2021/03/salony-krasoty.jpg" alt="" aria-hidden="true">
+            </div>
+            <div class="content">
+                <h2>Добро пожаловать в салон красоты Olly!</h2>
+                <p>Мы создаем вашу красоту с 2025 года</p>
+            </div>
+        </div>
+
+        <div id="services" class="page" style="display: none" aria-hidden="true">
+            <div class="content">
+                <h2>Наши услуги</h2>
+                <div class="service-item">
+                    <h3>Стрижка</h3>
+                    <p>Профессиональные стрижки</p>
+                </div>
+                <div class="service-item">
+                    <h3>Окрашивание</h3>
+                    <p>Модные техники окрашивания</p>
+                </div>
+                <div class="service-item">
+                    <h3>Маникюр</h3>
+                    <p>Стильный дизайн ногтей</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="contacts" class="page" style="display: none" aria-hidden="true">
+            <div class="content">
+                <h2>Контакты</h2>
+                <div class="contact-item">
+                    <h3>Адрес</h3>
+                    <p>ул. Красивая, 1</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Телефон</h3>
+                    <p>+7 (123) 456-78-90</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Время работы</h3>
+                    <p>9:00 - 21:00</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer" aria-hidden="true">
+            <p>© 2025 Olly - Салон красоты</p>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.style.display = 'none';
+            });
+            document.getElementById(pageId).style.display = 'block';
+        }
+    
+        document.addEventListener('selectstart', function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+</html>
